@@ -1,5 +1,6 @@
 import { StyleSheet } from 'react-native';
 import { backgroundColor, primaryColor } from '../../helpers/colors';
+import { windowHeight } from '../../helpers/dimensions';
 
 const styles = StyleSheet.create({
   container: {
@@ -11,6 +12,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 10,
+    marginVertical: windowHeight / 80,
   },
   titulo: {
     fontSize: 16,
