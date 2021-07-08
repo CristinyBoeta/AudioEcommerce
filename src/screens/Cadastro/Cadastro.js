@@ -4,7 +4,7 @@ import styles from './styles';
 import InputText from '../../components/InputText/InputText';
 import Button from '../../components/Button/Button';
 
-const Login = (props) => {
+const Cadastro = () => {
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
   return (
@@ -13,7 +13,7 @@ const Login = (props) => {
       style={styles.container}
     >
       <View style={styles.titleContainer}>
-        <Text style={styles.title}>Audio</Text>
+        <Text style={styles.title}>Audio - Cadastro</Text>
         <Text style={styles.secondaryTitle}>It's modular and designed to last</Text>
       </View>
       <View>
@@ -37,7 +37,6 @@ const Login = (props) => {
             titulo='Sing Up here'
             tituloStyles={[styles.accountText, styles.singUpText]}
             buttonStyles={[styles.buttonStyles, styles.singUpButton]}
-            onPress={() => props.navigation.navigate('Cadastro')}
           />
         </View>
       </View>
@@ -45,4 +44,4 @@ const Login = (props) => {
   );
 };
 
-export default Login;
+export default Cadastro;
