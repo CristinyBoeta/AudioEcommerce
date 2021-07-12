@@ -6,7 +6,7 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 const InputText = (props) => {
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, props.containerStyle]}>
       <Icon name={props.iconName} size={20} color={inputColor} />
       <TextInput
         value={props.value}

@@ -1,12 +1,27 @@
-import React, { useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { View, Text, ImageBackground } from 'react-native';
 import styles from './styles';
 import InputText from '../../components/InputText/InputText';
 import Button from '../../components/Button/Button';
+import { UsuarioLogado } from '../../contexto/contextUsuario';
 
 const Login = (props) => {
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
+  const { usuario, login } = useContext(UsuarioLogado);
+  console.log('usuario => ', usuario);
+
+  const fazerLogin = () => {
+    // requisição
+    const usuarioCadastrado = {
+      email: 'email@email',
+      idade: 22,
+      id: 1,
+      premium: true,
+      nome: 'Não sei',
+    };
+    login(usuarioCadastrado);
+  };
   return (
     <ImageBackground
       source={require('../../assets/png/backgroundImage.png')}
@@ -30,7 +45,7 @@ const Login = (props) => {
           iconName='lock-outline'
         />
         <Button titulo='Forgot Password' buttonStyles={styles.buttonStyles} />
-        <Button titulo='Sign in' />
+        <Button titulo='Sign in' onPress={fazerLogin} />
         <View style={styles.accountQuestionContainer}>
           <Text style={styles.accountText}>Didn’t have any account?</Text>
           <Button

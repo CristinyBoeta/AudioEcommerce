@@ -1,19 +1,22 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { View, Text, ImageBackground } from 'react-native';
 import styles from './styles';
 import InputText from '../../components/InputText/InputText';
 import Button from '../../components/Button/Button';
+import { UsuarioLogado } from '../../contexto/contextUsuario';
 
 const Cadastro = () => {
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
+  const { usuario } = useContext(UsuarioLogado);
+  console.log('no cadastro => ', usuario);
   return (
     <ImageBackground
       source={require('../../assets/png/backgroundImage.png')}
       style={styles.container}
     >
       <View style={styles.titleContainer}>
-        <Text style={styles.title}>Audio - Cadastro</Text>
+        <Text style={styles.title}>Audio</Text>
         <Text style={styles.secondaryTitle}>It's modular and designed to last</Text>
       </View>
       <View>
